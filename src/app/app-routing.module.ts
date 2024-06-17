@@ -25,8 +25,7 @@ const routes: Routes = [
   {path: 'clinicas', component:ClinicasPageComponent},
   {path: 'password', component:PasswordPageComponent},
   {path: 'panic', component:PanicPageComponent},
-  {path: 'editar-usuario', component:  UserEditComponent }, // INSERIDO POR LAURA
-
+  {path: 'editar-usuario', component:UserEditComponent}, // INSERIDO POR LAURA
 
 ];
 

@@ -1,6 +1,6 @@
 PÁGINAS DO USUÁRIO:
 
-***** COMUM - Página de edição de perfil (botao Perfil (ngif));
+***** COMUM - Página de edição de perfil (botao Perfil (ngif)); ------------------------------ OK
 
 ***** PROFISSIONAL  - Página de edição de perfil;
                     - Página de adicionar os artigos (textarea);
