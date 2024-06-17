@@ -1,0 +1,46 @@
+<app-header
+    [color]="headerColors.home"
+    titulo="Seu Perfil"
+    [h1HeaderColor]="h1HeaderColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [btnColor]="btnColors.home"
+/>
+
+<main class="flex_center">
+
+
+    <div  class="flex_center flex_column">
+        <app-card-img
+            [color]="ImgBorderColors.login"
+            img="\assets\img\perfil-de-usuario.png"
+        />
+        <div class="flex_center flex_row">
+            <button class="btn logout" >Deletar</button>
+            <app-btn-pages [color]="BtnColors.login" text="Logout" />
+            <img src="assets/img/editar.png" id="lapis" width="50" alt="lapis azul e editar foto" (click)="editEnable()" >
+
+        </div>
+    </div>
+    <div class="flex_center flex_column gap-32">
+        <form [formGroup]="userProfileForm">
+            <input type="text" formControlName="nome" placeholder="User" [readonly]="readonly">
+            <input type="text" formControlName="cpf" placeholder="000.000.000-00" [readonly]="readonly">
+            <input type="text" formControlName="dataNascimento" placeholder="00/00/0000" [readonly]="readonly">
+            <input type="text" formControlName="email" placeholder="user@user.com" [readonly]="readonly">
+            <app-btn-pages [color]="BtnColors.login" text="Salvar"/>
+        </form>
+    </div>
+
+</main>
+
+
+<app-footer [color]="footerColors.home" />
+
+
+<!-- <div class="flex_center flex_column gap-32">
+    <form [formGroup]="professionalRegisterForm">
+        <input type="text" formControlName="abordagem" placeholder="Insira sua abordagem">
+    </form>
+</div> -->

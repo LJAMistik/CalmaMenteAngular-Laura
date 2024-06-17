@@ -1,0 +1,23 @@
+img {
+    border: solid 4px;
+    border-radius: 25px;
+    box-shadow: var(--drop-shadow);
+    width: 400px;
+}
+
+.login_color {
+    border-color: var(--blue-text);
+}
+
+.register_color {
+    border-color: var(--pink-text);
+}
+
+.password_color {
+    border-color: #5CE1E6;
+}
+
+
+.clinicas_color {
+    border-color: var(--yellow-text);
+}

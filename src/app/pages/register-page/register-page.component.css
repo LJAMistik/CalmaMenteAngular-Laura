@@ -1,0 +1,23 @@
+input {
+    padding: 10px;
+    font-size: 28px;
+    border: none;
+    box-shadow: var(--drop-shadow);
+}
+
+#userType {
+    padding: 10px;
+    font-size: 28px;
+    border: none;
+    box-shadow: var(--drop-shadow);
+    width: 24px;
+    height: 24px;
+}
+
+label {
+    font-size: 20pt;
+}
+
+form {
+    padding: calc(var(--val-size)*2);
+}

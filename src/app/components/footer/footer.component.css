@@ -1,0 +1,21 @@
+@import 'src/assets/css/global.css';
+
+.footer_home {
+    background-color: var(--light-blue);
+}
+
+.footer_ansiedade {
+    background-color: var(--light-pink);
+}
+
+.footer_tdah {
+    background-color: var(--light-green);
+}
+
+.footer_depressao {
+    background-color: var(--dark-blue-light);
+}
+
+.footer_clinicas {
+    background-color: var(--light-yellow);
+}

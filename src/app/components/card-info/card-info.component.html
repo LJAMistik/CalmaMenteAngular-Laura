@@ -1,0 +1,7 @@
+<div class="informacao" (click)="toggleModal()">
+    <h2 [class]="h2Color">{{title}}</h2>
+    <p>Clique aqui e leia um breve texto sobre o assunto.</p>
+</div>
+
+ 
+<app-modal *ngIf="modalIsOpen" [title]="title" [description]="description" (onClose)="toggleModal()" />

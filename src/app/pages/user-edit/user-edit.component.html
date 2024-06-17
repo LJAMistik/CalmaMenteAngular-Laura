@@ -1,0 +1,40 @@
+<!-- INSERIDO POR LAURA -->
+
+<app-header></app-header>
+
+<main class="flex_center">
+
+  <div class="flex_center flex_column">
+    <app-card-img
+        [color]="ImgBorderColors.login"
+        img="\assets\img\perfil-de-usuario.png"
+    />
+    <div class="flex_center flex_row">
+        <button class="btn logout" >Deletar</button>
+        <app-btn-pages [color]="BtnColors.login" text="Logout" />
+        <img src="assets/img/editar.png" id="lapis" width="50" alt="lapis azul e editar foto" (click)="editEnable()">
+    </div>
+  </div>
+
+  <div class="user-edit-container">
+    <h2>Editar Perfil</h2>
+    <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+      <div class="flex_center flex_column gap-32">
+        <div class="form-group">
+          <label for="username">Nome de Usuário</label>
+          <input type="text" id="username" formControlName="nome" required>
+        </div>
+        <div class="form-group">
+          <input type="text" formControlName="dataNascimento" placeholder="00/00/0000" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" formControlName="email" required>
+        </div>
+      </div>
+      <app-btn-pages [color]="BtnColors.login" text="Salvar" type="submit"/>
+    </form>
+  </div>
+</main>
+
+<app-footer [color]="footerColors.home"></app-footer>

@@ -1,0 +1,5 @@
+<div class="topicos__artigos" (click)="toggleModal()">
+    <h4>{{title}}</h4>
+</div>
+
+<app-modal *ngIf="modalIsOpen" [title]="title" [description]="description" (onClose)="toggleModal()" />

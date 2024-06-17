@@ -1,0 +1,32 @@
+<app-header
+    [color]="headerColors.home"
+    titulo="CalmaMente"
+    [h1HeaderColor]="h1HeaderColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [btnColor]="btnColors.home"/>
+
+<main>
+    <div class="container_cards">
+
+        <app-card [color]="Colors.ansiedade" route="/ansiedade" text="Ansiedade" img="assets/img/ansiedade.png" />
+
+        <app-card [color]="Colors.tdah" route="/tdah" text="TDAH" img="assets/img/tdah.png" />
+
+        <app-card [color]="Colors.depressao" route="/depressao" text="Depressão" img="assets/img/depressao.png" />
+
+        <app-card [color]="Colors.api" route="quemsomos.html" text="Clínicas" img="assets/img/pointer.png" />
+
+    </div>
+    <aside>
+        <div class="container_banner">
+            <div class="banner">
+                <img src="../../assets/img/banner-evento.png" alt="">
+            </div>
+        </div>
+    </aside>
+
+</main>
+
+<app-footer [color]="footerColors.home" />

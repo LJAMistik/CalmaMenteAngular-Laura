@@ -1,0 +1,10 @@
+.topicos__artigos{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--drop-shadow);
+    padding: 16px 160px   ;
+}

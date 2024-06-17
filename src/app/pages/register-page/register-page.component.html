@@ -1,0 +1,58 @@
+<app-header
+    [color]="headerColors.ansiedade"
+    titulo="Cadastre-se"
+    [h1HeaderColor]="h1HeaderColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [btnColor]="btnColors.ansiedade"
+/>
+
+<main class="flex_center">
+    <app-card-img 
+    [color]="ImgBorderColors.register"
+    img="assets/img/cadastro__img.jpeg"
+    />
+    <div class="flex_center flex_column gap-32">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <input 
+                type="text" 
+                formControlName="nome" 
+                placeholder="Seu Nome"
+            />
+            <input 
+                type="text" 
+                formControlName="cpf" 
+                placeholder="Seu CPF"
+            />
+            <input 
+                type="text" 
+                formControlName="dataNascimento" 
+                placeholder="Data de Nascimento"
+            />
+            <label for="userType">
+                <input type="checkbox"  formControlName="userType" id="userType">
+                Sou Profissional
+            </label>
+            <input
+                type="text" 
+                formControlName="crp" 
+                placeholder="CRP" 
+                *ngIf="registerForm.controls.userType.value"
+            />
+            <input 
+                type="text" 
+                formControlName="email" 
+                placeholder="Seu E-mail"
+            />
+            <input type="password" formControlName="senha" placeholder="Defina sua Senha">
+            <input type="password" formControlName="confirmSenha" placeholder="Repita sua Senha">
+            <app-btn-pages [disabled]="!registerForm.valid || !validateCrp()" [color]="BtnColors.register" text="Cadastre-se" />
+        </form>
+        
+    </div>
+
+</main>
+
+
+<app-footer [color]="footerColors.ansiedade" />

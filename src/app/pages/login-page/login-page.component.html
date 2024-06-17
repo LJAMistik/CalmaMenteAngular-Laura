@@ -1,0 +1,35 @@
+<app-header
+    [color]="headerColors.home"
+    titulo="Login"
+    [h1HeaderColor]="h1HeaderColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [btnColor]="btnColors.home"
+/>
+<main class="flex_center">
+    <app-card-img 
+        [color]="ImgBorderColors.login"
+        img="assets/img/login__img.jpeg" 
+
+    />
+    <div class="flex_center flex_column gap-32">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="email" placeholder="E-mail">
+            <input type="password" formControlName="senha" placeholder="Senha">
+            <label for="userType">
+                <input type="checkbox"  formControlName="userType" id="userType">
+                Sou Profissional
+            </label>
+            <app-btn-pages [disabled]="!loginForm.valid" [color]="BtnColors.login" text="Login" />
+        </form>
+        <div class="flex_center flex_column">
+            <app-links route="/cadastro" text="Cadastre-se"/>
+            <app-links route="/password" text="Esqueceu sua senha?"/>
+        </div>
+    </div>
+</main>
+
+<app-footer [color]="footerColors.home" />
+
+<app-modal-feedback *ngIf="!!errors" [statusModal]="false" [msg]="errors" (onClose)="handleClose()" />

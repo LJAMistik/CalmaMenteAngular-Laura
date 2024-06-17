@@ -1,0 +1,24 @@
+<header [class]="color" >
+    <nav class="nav__home">
+        <img src="assets/img/logo1.png" width="100" alt="logo">
+        <input type="checkbox" id="menu-toggle">
+        <h1 [class]="h1HeaderColor">{{titulo}}</h1>
+        <label for="menu-toggle" class="menu-button">
+            <span [class]="'bar ' + textColor "></span>
+            <span [class]="'bar ' + textColor "></span>
+            <span [class]="'bar ' + textColor "></span>
+        </label>
+        <ul class="menu">
+            <li><a routerLink="" routerLinkActive="">Home</a></li>
+            <li><a routerLink="/ansiedade" routerLinkActive="active">Ansiedade</a></li>
+            <li><a routerLink="/depressao" routerLinkActive="active">Depressão</a></li>
+            <li><a routerLink="/tdah" routerLinkActive="active">TDAH</a></li>
+            <li><a routerLink="/clinicas" routerLinkActive="active">Clínicas</a></li>
+        </ul>
+        <a routerLink="/login" routerLinkActive="active"><button [class]="btnColor">Login</button></a>
+    
+        <button *ngIf="isLoggedIn" (click)="navigateToUserEdit()" [ngClass]="btnColor">Perfil</button> <!-- // INSERIDO POR LAURA -->
+        <button *ngIf="isLoggedIn" (click)="logout()" [ngClass]="btnColor">Logout</button> <!-- // INSERIDO POR LAURA -->
+
+    </nav>
+</header>

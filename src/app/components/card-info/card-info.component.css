@@ -1,0 +1,23 @@
+.informacao{
+    width: 90%;
+    padding: 30px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 30px;
+    box-shadow: var(--drop-shadow);
+}
+
+.h2_ansiedade {
+    color: var(--light-pink-text);
+}
+
+.h2_tdah {
+    color: var(--green-text);
+}
+
+.h2_depressao {
+    color: var(--dark-blue-light-text);
+}

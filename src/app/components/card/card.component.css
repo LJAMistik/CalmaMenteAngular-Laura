@@ -1,0 +1,31 @@
+:host {
+    display: contents;
+}
+
+.card_size {
+    width: calc(50% - 12px);
+    border-radius: 50px;
+    box-shadow: var(--drop-shadow);
+}
+
+.card_size img {
+    height: -webkit-fill-available;
+    max-height: 145px;
+    width: auto;
+}
+
+.card_ansiedade {
+    background-color: var(--light-pink);
+}
+  
+.card_tdah {
+    background-color: var(--light-green);
+}
+  
+.card_depressao {
+    background-color: var(--dark-blue-light);
+}
+  
+.card_api {
+    background-color: var(--light-yellow);
+}

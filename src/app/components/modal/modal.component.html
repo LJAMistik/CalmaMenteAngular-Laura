@@ -1,0 +1,7 @@
+<div class="container__modal flex_center" id="ModalIDl"> 
+    <div class="modal">
+        <button class="fechar" (click)="handleClose()">X</button>
+        <h3 id="title">{{title}}</h3>
+        <div class="conteudo" [innerHTML]="getSecureHtml()"></div>
+    </div>
+</div>

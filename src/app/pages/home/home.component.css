@@ -1,0 +1,106 @@
+@import 'src/assets/css/global.css';
+
+/* main {
+    display: flex;
+    padding: calc(var(--val-size)*2);
+}
+
+.pag__inicial {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 60%;
+}
+  
+
+aside {
+    width: 40%;
+    display: flex;
+}
+
+.container_banner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    background-color: red;
+    width: 300px;
+    height: 500px;
+} */
+
+
+
+
+/* Classes novas */
+
+main {
+    display: flex;
+    padding: calc(var(--val-size)*2);
+}
+
+.container_cards {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
+    gap: 24px;
+    width: 60%;
+}
+
+.card_size img {
+    height: -webkit-fill-available;
+    max-height: 145px;
+    width: auto;
+}
+
+.card_size {
+    width: calc(50% - 12px);
+    /* height: 215px; */
+    border-radius: 50px;
+    box-shadow: var(--drop-shadow);
+    /* overflow: hidden; */
+}
+
+.card_ansiedade {
+    background-color: var(--light-pink);
+}
+  
+.card_tdah {
+    background-color: var(--light-green);
+}
+  
+.card_depressao {
+    background-color: var(--dark-blue-light);
+}
+  
+.card_api {
+    background-color: var(--light-yellow);
+}
+
+aside {
+    width: 40%;
+    display: flex;
+}
+
+.container_banner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    width: 55%
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 16px;
+}

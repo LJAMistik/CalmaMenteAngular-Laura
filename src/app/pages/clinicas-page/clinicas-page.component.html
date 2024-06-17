@@ -1,0 +1,31 @@
+<app-header
+    [color]="headerColors.clinicas"
+    titulo="Clínicas"
+    [h1HeaderColor]="h1HeaderColors.clinicas"
+    [textColor]="textColors.clinicas"
+    [textColor]="textColors.clinicas"
+    [textColor]="textColors.clinicas"
+    [btnColor]="btnColors.clinicas"
+/>
+
+<main class="flex_center flex_row">
+    <app-card-img 
+    [color]="ImgBorderColors.clinicas"
+    img="assets/img/obras.jpeg" 
+    />
+
+    <div class="flex_center flex_column gap-32">
+        <app-card-article 
+            title="Clínica 1" 
+        />
+        <app-card-article 
+            title="Clínica 2" 
+        />
+        <app-card-article 
+            title="Clínica 3"
+        />
+    </div>
+</main>
+
+<app-footer [color]="footerColors.clinicas" />
+

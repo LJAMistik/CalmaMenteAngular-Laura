@@ -1,0 +1,25 @@
+<app-header
+    [color]="headerColors.ansiedade"
+    titulo="Ansiedade"
+    [h1HeaderColor]="h1HeaderColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [textColor]="textColors.ansiedade"
+    [btnColor]="btnColors.ansiedade"
+/>
+
+<main>
+    <app-panic-btn />
+        <div class="artigos" *ngIf="apiResponse">
+            <app-card-info [h2Color]="h2Colors.ansiedade" [title]="apiResponse.titulo" [description]="apiResponse.descricao" />
+            <div class="flex_center flex_column gap-32">
+                <app-card-article 
+                    *ngFor="let article of apiResponse.artigos" 
+                    [title]="article.titulo" 
+                    [description]="article.descricao"
+                />
+            </div>
+        </div>
+</main>
+
+<app-footer [color]="footerColors.ansiedade" />
