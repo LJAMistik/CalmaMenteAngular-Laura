@@ -28,10 +28,15 @@ export class UsuarioService {
   public getUser(email: string): Observable<UserType> {
     return this.http.get<UserType>(`${this.baseUrl}/${email}`);
   }
+
+  public getProfessionalProfile(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/professional-profile`);
+  }
+
+  public updateProfessionalProfile(userData: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/professional-profile`, userData);
+  }
   // FIM DA INSERÇÃO POR LAURA
   
-  // public getUser(email:string) {
-  //   return this.http.get<UserType>(`${this.baseUrl}/${email}`);
-  // }
 }
 

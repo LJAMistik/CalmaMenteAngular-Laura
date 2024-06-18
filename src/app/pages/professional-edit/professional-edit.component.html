@@ -1,0 +1,42 @@
+<!-- INSERIDO POR LAURA -->
+
+<app-header
+    [color]="headerColors.home"
+    titulo="Perfil do Profissional"
+    [h1HeaderColor]="h1HeaderColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [textColor]="textColors.home"
+    [btnColor]="btnColors.home"
+/>
+
+<main class="flex_center">
+    <div class="flex_center flex_column">
+        <app-card-img
+            [color]="ImgBorderColors.login"
+            img="\assets\img\perfil-de-usuario.png"
+        />
+    </div>
+
+    <div class="professional-edit-container">
+        <form [formGroup]="professionalProfileForm" (ngSubmit)="onSubmit()">
+            <div class="flex_center flex_column gap-32">               
+                <input type="text" formControlName="nome" placeholder="Nome do Profissional" [readonly]="readonly">
+                <input type="text" formControlName="cpf" placeholder="000.000.000-00" [readonly]="readonly">
+                <input type="text" formControlName="email" placeholder="user@professional.com" [readonly]="readonly">
+                <input type="text" formControlName="crp" placeholder="00/000.000" [readonly]="readonly">
+                <legend>Endereço</legend>
+                <input type="text" formControlName="cep" placeholder="CEP" [readonly]="readonly">
+                <input type="text" formControlName="logradouro" placeholder="Logradouro" [readonly]="readonly">
+                <input type="text" formControlName="numero" placeholder="0000" [readonly]="readonly">
+                <input type="text" formControlName="bairro" placeholder="Bairro" [readonly]="readonly">
+                <input type="text" formControlName="cidade" placeholder="Cidade" [readonly]="readonly">
+                <input type="text" formControlName="estado" placeholder="Estado" [readonly]="readonly">
+            </div>
+            <app-btn-pages [color]="BtnColors.login" text="Salvar" type="submit"/>
+        </form>
+        <!-- <app-modal-feedback></app-modal-feedback> -->
+    </div>
+</main>
+
+<app-footer></app-footer>

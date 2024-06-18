@@ -5,6 +5,7 @@ import { h2Colors } from 'src/app/components/card-info/card-info.component';
 import { footerColors } from 'src/app/components/footer/footer.component';
 import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/components/header/header.component';
 import { FormGroup, FormControl } from '@angular/forms';
+
 @Component({
   selector: 'app-professional-profile',
   templateUrl: './professional-profile.component.html',
@@ -25,7 +26,8 @@ export class ProfessionalProfileComponent {
     cpf: new FormControl(''),
     email: new FormControl(''),
     crp: new FormControl(''),
-    abordagem: new FormControl('')
+    contato: new FormControl(''),   // INSERIDO POR LAURA
+    endereco: new FormControl(''),  // INSERIDO POR LAURA
   })
 
   @Input() readonly:boolean = true;

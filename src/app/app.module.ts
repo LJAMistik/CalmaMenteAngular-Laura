@@ -28,9 +28,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClinicasPageComponent } from './pages/clinicas-page/clinicas-page.component';
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
 import { PanicPageComponent } from './pages/panic-page/panic-page.component';
+// INSERIDO POR LAURA
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
-import { AuthService } from './services/auth.service'; // INSERIDO POR LAURA
-import { RouterModule } from '@angular/router'; // INSERIDO POR LAURA
+import { AuthService } from './services/auth.service'; 
+import { RouterModule } from '@angular/router'; 
+import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+
+
 
 @NgModule({
   declarations: [
@@ -59,7 +69,8 @@ import { RouterModule } from '@angular/router'; // INSERIDO POR LAURA
     ClinicasPageComponent,
     PasswordPageComponent,
     PanicPageComponent,
-    UserEditComponent // INSERIDO POR LAURA
+    UserEditComponent, // INSERIDO POR LAURA
+    ProfessionalEditComponent, DashboardComponent, SidenavComponent // INSERIDO POR LAURA
   ],
   imports: [
     BrowserModule,
@@ -67,7 +78,13 @@ import { RouterModule } from '@angular/router'; // INSERIDO POR LAURA
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule // INSERIDO POR LAURA
+    // INSERIDO POR LAURA
+    RouterModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatMenuModule
+
   ],
   providers: [AuthService], // INSERIDO POR LAURA
   bootstrap: [AppComponent]

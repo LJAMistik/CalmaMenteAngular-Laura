@@ -1,7 +1,53 @@
+import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ApiService } from './api-service';
+import { HttpClient } from '@angular/common/http';
 
 describe('ApiService', () => {
-  it('should create an instance', () => {
-    expect(new ApiService()).toBeTruthy();
+  let service: ApiService;
+  let httpTestingController: HttpTestingController;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ApiService]
+    });
+    service = TestBed.inject(ApiService);
+    httpTestingController = TestBed.inject(HttpTestingController);
+  });
+
+  afterEach(() => {
+    httpTestingController.verify();
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('should send a GET request', () => {
+    const testData = { name: 'Test', email: 'test@example.com' };
+
+    service.get('/users').subscribe(data => {
+      expect(data).toEqual(testData);
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:9090/users');
+    expect(req.request.method).toEqual('GET');
+
+    req.flush(testData);
+  });
+
+  it('should send a POST request', () => {
+    const testData = { name: 'Test', email: 'test@example.com' };
+
+    service.post('/users', testData).subscribe(data => {
+      expect(data).toEqual(testData);
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:9090/users');
+    expect(req.request.method).toEqual('POST');
+    expect(req.request.body).toEqual(testData);
+
+    req.flush(testData);
   });
 });

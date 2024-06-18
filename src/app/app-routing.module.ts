@@ -12,6 +12,7 @@ import { ClinicasPageComponent } from './pages/clinicas-page/clinicas-page.compo
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
 import { PanicPageComponent } from './pages/panic-page/panic-page.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component'; // INSERIDO POR LAURA
+import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component'; // INSERIDO POR LAURA
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -25,7 +26,10 @@ const routes: Routes = [
   {path: 'clinicas', component:ClinicasPageComponent},
   {path: 'password', component:PasswordPageComponent},
   {path: 'panic', component:PanicPageComponent},
-  {path: 'editar-usuario', component:UserEditComponent}, // INSERIDO POR LAURA
+  // INSERIDO POR LAURA// INSERIDO POR LAURA
+  {path: 'editar-profissional', component:ProfessionalEditComponent},
+
+
 
 ];
 

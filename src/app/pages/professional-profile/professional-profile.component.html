@@ -9,8 +9,6 @@
 />
 
 <main class="flex_center">
-
-
     <div  class="flex_center flex_column">
         <app-card-img
             [color]="ImgBorderColors.login"
@@ -20,30 +18,24 @@
             <button class="btn logout" >Deletar</button>
             <app-btn-pages [color]="BtnColors.login" text="Logout" />
             <img src="assets/img/editar.png" id="lapis" width="50" alt="lapis azul e editar foto" (click)="editEnable()" >
-
         </div>
     </div>
 
     <div class="flex_center flex_column gap-32">
         <form [formGroup]="professionalProfileForm">
-            <input type="text" formControlName="nome" placeholder="ProfessionalUser" [readonly]="readonly">
+            <!-- //INSERIDO POR LAURA -->
+            <input type="text" formControlName="nome" placeholder="Nome do Profissional" [readonly]="readonly">
             <input type="text" formControlName="cpf" placeholder="000.000.000-00" [readonly]="readonly">
-            <input type="text" formControlName="dataNascimento" placeholder="00/00/0000" [readonly]="readonly">
             <input type="text" formControlName="email" placeholder="user@professional.com" [readonly]="readonly">
-            <input type="text" formControlName="abordagem" placeholder="Cognitivo-Comportamental" [readonly]="readonly">
-            <app-btn-pages [color]="BtnColors.login" text="Salvar"/>
-
+            <input type="text" formControlName="crp" placeholder="00/000.000" [readonly]="readonly">
+            <legend>Endereço</legend>
+            <input type="text" formControlName="cep" placeholder="CEP" [readonly]="readonly">
+            <input type="text" formControlName="logradouro" placeholder="Logradouro" [readonly]="readonly">
+            <input type="text" formControlName="numero" placeholder="0000" [readonly]="readonly">
+            <input type="text" formControlName="bairro" placeholder="Bairro" [readonly]="readonly">
+            <input type="text" formControlName="cidade" placeholder="Cidade" [readonly]="readonly">
+            <input type="text" formControlName="estado" placeholder="Estado" [readonly]="readonly">
         </form>
     </div>
-
 </main>
-
-
 <app-footer [color]="footerColors.home" />
-
-
-<!-- <div class="flex_center flex_column gap-32">
-    <form [formGroup]="professionalRegisterForm">
-        <input type="text" formControlName="abordagem" placeholder="Insira sua abordagem">
-    </form>
-</div> -->
