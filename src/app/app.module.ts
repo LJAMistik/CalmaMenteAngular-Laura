@@ -24,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalFeedbackComponent } from './components/modal-feedback/modal-feedback.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { ProfessionalProfileComponent } from './pages/professional-profile/professional-profile.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ClinicasPageComponent } from './pages/clinicas-page/clinicas-page.component';
 import { PasswordPageComponent } from './pages/password-page/password-page.component';
 import { PanicPageComponent } from './pages/panic-page/panic-page.component';
@@ -42,51 +42,43 @@ import { MatMenuModule } from '@angular/material/menu';
 
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    CardComponent,
-    AnsiedadePageComponent,
-    ArtigoComponent,
-    ModalInfoComponent,
-    PanicBtnComponent,
-    TdahPageComponent,
-    DepressaoPageComponent,
-    ModalComponent,
-    LoginPageComponent,
-    RegisterPageComponent,
-    CardImgComponent,
-    InputComponent,
-    LinksComponent,
-    BtnPagesComponent,
-    InputCheckboxComponent,
-    ModalFeedbackComponent,
-    UserProfileComponent,
-    ProfessionalProfileComponent,
-    ClinicasPageComponent,
-    PasswordPageComponent,
-    PanicPageComponent,
-    UserEditComponent, // INSERIDO POR LAURA
-    ProfessionalEditComponent, DashboardComponent, SidenavComponent // INSERIDO POR LAURA
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    // INSERIDO POR LAURA
-    RouterModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatMenuModule
-
-  ],
-  providers: [AuthService], // INSERIDO POR LAURA
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        HeaderComponent,
+        FooterComponent,
+        CardComponent,
+        AnsiedadePageComponent,
+        ArtigoComponent,
+        ModalInfoComponent,
+        PanicBtnComponent,
+        TdahPageComponent,
+        DepressaoPageComponent,
+        ModalComponent,
+        LoginPageComponent,
+        RegisterPageComponent,
+        CardImgComponent,
+        InputComponent,
+        LinksComponent,
+        BtnPagesComponent,
+        InputCheckboxComponent,
+        ModalFeedbackComponent,
+        UserProfileComponent,
+        ProfessionalProfileComponent,
+        ClinicasPageComponent,
+        PasswordPageComponent,
+        PanicPageComponent,
+        UserEditComponent, // INSERIDO POR LAURA
+        ProfessionalEditComponent, DashboardComponent, SidenavComponent // INSERIDO POR LAURA
+    ], // INSERIDO POR LAURA
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // INSERIDO POR LAURA
+        RouterModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatMenuModule], providers: [AuthService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
