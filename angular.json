@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CalmaMenteAngular:build:production"
+              "buildTarget": "CalmaMenteAngular:build:production"
             },
             "development": {
-              "browserTarget": "CalmaMenteAngular:build:development"
+              "buildTarget": "CalmaMenteAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CalmaMenteAngular:build"
+            "buildTarget": "CalmaMenteAngular:build"
           }
         },
         "test": {
