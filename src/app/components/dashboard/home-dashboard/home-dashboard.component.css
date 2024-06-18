@@ -1,30 +1,41 @@
 /* // INSERIDO POR LAURA */
 .page {
-    color: white;
+    color: #8A2BE2;
     padding: 0 1rem;
-    background: #f1f5f9;
+    background: #A560FF;
   }
   
   .page__box {
     min-height: 120px;
-    background: #1e293b;
+    background: #2E1B47;
     margin: 0 -1rem;
     font-size: 36px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
   }
   
   .page__content {
     min-height: calc(100vh - 178px);
     border-radius: 10px;
     margin-top: -2rem;
-    background: white;
-    color: black;
+    background: #EED4FF;
+    color: #8A2BE2;
     font-size: 2rem;
   }
-  
-  .page__content-data {
+    .page__content-data {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   
+  .container-img {
+    display: flex;
+  }
+
+  .container-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }

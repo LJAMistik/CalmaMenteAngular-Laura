@@ -14,7 +14,7 @@ import { PanicPageComponent } from './pages/panic-page/panic-page.component';
 // INSERIDO POR LAURA
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
-import { AdminComponent } from './pages/admin/admin.component';
+// import { AdminComponent } from './pages/admin/admin.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -31,7 +31,8 @@ const routes: Routes = [
   // INSERIDO POR LAURA// INSERIDO POR LAURA
   {path: 'editar-usuario', component:UserEditComponent},
   {path: 'editar-profissional', component:ProfessionalEditComponent},
-  {path: 'admin', component:AdminComponent},
+  // {path: 'admin', component:AdminComponent},
+  {path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)},
 ];
 
 @NgModule({

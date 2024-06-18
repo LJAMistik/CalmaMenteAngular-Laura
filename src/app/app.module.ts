@@ -33,13 +33,15 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { AuthService } from './services/auth.service'; 
 import { RouterModule } from '@angular/router'; 
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
-import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
-import { SidenavDashboardComponent } from './components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
-import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
-import { HeaderDashboardComponent } from './components/dashboard/header-dashboard/header-dashboard.component';
+// import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+// import { SidenavDashboardComponent } from './components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
+// import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
+// import { HeaderDashboardComponent } from './components/dashboard/header-dashboard/header-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { AdminComponent } from './pages/admin/admin.component';
+// import { AdminComponent } from './pages/admin/admin.component';
+// import { AdminModule } from './pages/admin/admin.module';
+
 
 //Imports do Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -83,11 +85,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         // INSERIDO POR LAURA
         UserEditComponent, 
         ProfessionalEditComponent, 
-        DashboardComponent, 
-        SidenavDashboardComponent,
-        HeaderDashboardComponent,
-        HomeDashboardComponent,
-        AdminComponent
+        // DashboardComponent, 
+        // SidenavDashboardComponent,
+        // HeaderDashboardComponent,
+        // HomeDashboardComponent,
+        // AdminComponent
     ],
 
     imports: [
@@ -98,6 +100,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         // INSERIDO POR LAURA
         RouterModule,
         BrowserAnimationsModule,
+        // AdminModule,
+        // Imports do Angular Material
         MatCardModule,
         MatToolbarModule,
         MatListModule,

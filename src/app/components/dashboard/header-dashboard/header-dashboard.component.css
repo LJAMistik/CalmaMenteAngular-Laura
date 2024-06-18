@@ -15,11 +15,11 @@ mat-toolbar {
   }
   
   .user {
-    font-size: 14px;
+    font-size: 20px;
   }
   
   mat-toolbar {
-    background: #f7f7f7;
+    background: #8A2BE2;
   }
   
   .user-image {
@@ -37,3 +37,7 @@ mat-toolbar {
     width: 160px;
   }
   
+  /* Adicionando um espaçador flexível */
+.spacer {
+  flex: 1;
+}
