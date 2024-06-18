@@ -39,10 +39,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 
-@NgModule({ declarations: [
+@NgModule({ 
+
+    declarations: [
         AppComponent,
         HomeComponent,
         HeaderComponent,
@@ -68,17 +75,38 @@ import { MatMenuModule } from '@angular/material/menu';
         ClinicasPageComponent,
         PasswordPageComponent,
         PanicPageComponent,
-        UserEditComponent, // INSERIDO POR LAURA
-        ProfessionalEditComponent, DashboardComponent, SidenavComponent // INSERIDO POR LAURA
-    ], // INSERIDO POR LAURA
-    bootstrap: [AppComponent], imports: [BrowserModule,
+        // INSERIDO POR LAURA
+        UserEditComponent, 
+        ProfessionalEditComponent, 
+        DashboardComponent, 
+        SidenavComponent 
+    ],
+
+    imports: [
+        BrowserModule,
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
         // INSERIDO POR LAURA
         RouterModule,
         BrowserAnimationsModule,
+        MatCardModule,
         MatToolbarModule,
+        MatListModule,
+        MatIconModule,
+        MatDividerModule,
         MatButtonModule,
-        MatMenuModule], providers: [AuthService, provideHttpClient(withInterceptorsFromDi())] })
+        MatMenuModule
+    ], 
+    
+    providers: [
+        AuthService, 
+        provideHttpClient(withInterceptorsFromDi()), 
+        provideAnimationsAsync()
+    ],
+
+    bootstrap: [
+        AppComponent]
+}) 
+
 export class AppModule { }
