@@ -13,4 +13,11 @@ export class AppComponent {
   public btnColors = btnColors;
   public textColors = textColors;
   public footerColors = footerColors;
+
+
+  // sideBarOpen = true;
+
+  // sideBarToggler() {
+  //   this.sideBarOpen = !this.sideBarOpen;
+  // }
 }

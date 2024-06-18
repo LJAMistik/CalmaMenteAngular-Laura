@@ -1,0 +1,23 @@
+<!-- <app-header-dashboard></app-header-dashboard>
+<app-sidenav-dashboard></app-sidenav-dashboard>
+<app-home-dashboard></app-home-dashboard>
+<app-dashboard></app-dashboard> -->
+
+<!-- //INSERIDO POR LAURA -->
+
+<mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav-dashboard></app-sidenav-dashboard>
+      
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <app-header-dashboard (toggleSidebarForMe)="sideBarToggler()"></app-header-dashboard>
+      
+      <router-outlet></router-outlet>
+    
+    </mat-drawer-content>
+
+</mat-drawer-container>
+

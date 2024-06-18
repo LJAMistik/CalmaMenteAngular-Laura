@@ -33,18 +33,23 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { AuthService } from './services/auth.service'; 
 import { RouterModule } from '@angular/router'; 
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
+import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
+import { SidenavDashboardComponent } from './components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
+import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
+import { HeaderDashboardComponent } from './components/dashboard/header-dashboard/header-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AdminComponent } from './pages/admin/admin.component';
+
+//Imports do Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({ 
@@ -79,7 +84,10 @@ import { MatListModule } from '@angular/material/list';
         UserEditComponent, 
         ProfessionalEditComponent, 
         DashboardComponent, 
-        SidenavComponent 
+        SidenavDashboardComponent,
+        HeaderDashboardComponent,
+        HomeDashboardComponent,
+        AdminComponent
     ],
 
     imports: [
@@ -96,7 +104,8 @@ import { MatListModule } from '@angular/material/list';
         MatIconModule,
         MatDividerModule,
         MatButtonModule,
-        MatMenuModule
+        MatMenuModule,
+        MatSidenavModule
     ], 
     
     providers: [

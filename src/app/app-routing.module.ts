@@ -14,10 +14,7 @@ import { PanicPageComponent } from './pages/panic-page/panic-page.component';
 // INSERIDO POR LAURA
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
-import { SidenavComponent } from './dashboard/sidenav/sidenav.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { HeaderComponent } from './dashboard/header/header.component';
-import { HomeDashboardComponent } from './dashboard/home-dashboard/home.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -34,18 +31,7 @@ const routes: Routes = [
   // INSERIDO POR LAURA// INSERIDO POR LAURA
   {path: 'editar-usuario', component:UserEditComponent},
   {path: 'editar-profissional', component:ProfessionalEditComponent},
-  
-  { 
-    path: 'admin', 
-    component: DashboardComponent,
-    children: [
-      { path: 'sidenav', component: SidenavComponent },
-      { path: 'header', component: HeaderComponent },
-      { path: 'home-dashboard', component: HomeDashboardComponent },
-      { path: '', redirectTo: 'home-dashboard', pathMatch: 'full' } 
-    ]
-  },
-  { path: '**', redirectTo: '/home' } // Redireciona para a página inicial se a rota não for encontrada
+  {path: 'admin', component:AdminComponent},
 ];
 
 @NgModule({
