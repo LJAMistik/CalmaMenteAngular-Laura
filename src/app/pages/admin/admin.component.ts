@@ -1,9 +1,8 @@
-import { Component, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './../../components/dashboard/dashboard/dashboard.component';
-import { SidenavDashboardComponent } from './../../components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
-import { HomeDashboardComponent } from './../../components/dashboard/home-dashboard/home-dashboard.component';
-import { HeaderDashboardComponent } from './../../components/dashboard/header-dashboard/header-dashboard.component';
+import { Component } from '@angular/core';
+import { DashboardAdminComponent } from './../../components/dashboard/dashboard-admin/dashboard-admin.component';
+import { SidenavDashboardAdminComponent } from './../../components/dashboard/sidenav-dashboard-admin/sidenav-dashboard-admin.component';
+import { HomeDashboardAdminComponent } from './../../components/dashboard/home-dashboard-admin/home-dashboard-admin.component';
+import { HeaderDashboardAdminComponent } from './../../components/dashboard/header-dashboard-admin/header-dashboard-admin.component';
 
 @Component({
   selector: 'app-admin',
@@ -12,10 +11,10 @@ import { HeaderDashboardComponent } from './../../components/dashboard/header-da
 })
 
 export class AdminComponent {
-  public dashboardComponent = DashboardComponent;
-  public sidenavDashboardComponent = SidenavDashboardComponent;
-  public homeDashboardComponent = HomeDashboardComponent;
-  public headerDashboardComponent = HeaderDashboardComponent;
+  public dashboardAdminComponent = DashboardAdminComponent;
+  public sidenavDashboardAdminComponent = SidenavDashboardAdminComponent;
+  public homeDashboardAdminComponent = HomeDashboardAdminComponent;
+  public headerDashboardAdminComponent = HeaderDashboardAdminComponent;
   
   sideBarOpen = true;
 

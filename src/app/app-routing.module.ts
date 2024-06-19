@@ -14,7 +14,10 @@ import { PanicPageComponent } from './pages/panic-page/panic-page.component';
 // INSERIDO POR LAURA
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
-// import { AdminComponent } from './pages/admin/admin.component';
+import { EventoComponent } from './pages/evento/evento.component';
+import { ClinicaComponent } from './pages/clinica/clinica.component';
+import { TranstornoComponent } from './pages/transtorno/transtorno.component';
+import { ArtigoComponent } from './pages/artigo/artigo.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -22,7 +25,7 @@ const routes: Routes = [
   {path: 'depressao', component: DepressaoPageComponent},
   {path: 'tdah', component: TdahPageComponent},
   {path: 'login', component:LoginPageComponent},
-  {path: 'cadastro', component:RegisterPageComponent},
+  {path: 'cadastro', component:RegisterPageComponent},  
   {path: 'perfil-usuario', component:UserProfileComponent},
   {path: 'perfil-profissional', component:ProfessionalProfileComponent},
   {path: 'clinicas', component:ClinicasPageComponent},
@@ -31,8 +34,13 @@ const routes: Routes = [
   // INSERIDO POR LAURA// INSERIDO POR LAURA
   {path: 'editar-usuario', component:UserEditComponent},
   {path: 'editar-profissional', component:ProfessionalEditComponent},
-  // {path: 'admin', component:AdminComponent},
   {path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)},
+  {path: 'painel', loadChildren: () => import('./pages/professional/professional.module').then(m => m.ProfessionalModule)},
+  {path: 'evento', component:EventoComponent},
+  {path: 'clinica', component:ClinicaComponent},
+  {path: 'transtorno', component:TranstornoComponent},
+  {path: 'artigo', component:ArtigoComponent},
+
 ];
 
 @NgModule({

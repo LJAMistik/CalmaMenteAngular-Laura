@@ -33,14 +33,9 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { AuthService } from './services/auth.service'; 
 import { RouterModule } from '@angular/router'; 
 import { ProfessionalEditComponent } from './pages/professional-edit/professional-edit.component';
-// import { DashboardComponent } from './components/dashboard/dashboard/dashboard.component';
-// import { SidenavDashboardComponent } from './components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
-// import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
-// import { HeaderDashboardComponent } from './components/dashboard/header-dashboard/header-dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-// import { AdminComponent } from './pages/admin/admin.component';
-// import { AdminModule } from './pages/admin/admin.module';
+import { EventoComponent } from './pages/evento/evento.component';
 
 
 //Imports do Material
@@ -52,6 +47,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ClinicaComponent } from './pages/clinica/clinica.component';
+import { TranstornoComponent } from './pages/transtorno/transtorno.component';
 
 
 @NgModule({ 
@@ -85,11 +82,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         // INSERIDO POR LAURA
         UserEditComponent, 
         ProfessionalEditComponent, 
-        // DashboardComponent, 
-        // SidenavDashboardComponent,
-        // HeaderDashboardComponent,
-        // HomeDashboardComponent,
-        // AdminComponent
+        EventoComponent, ClinicaComponent, TranstornoComponent
     ],
 
     imports: [
@@ -100,7 +93,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         // INSERIDO POR LAURA
         RouterModule,
         BrowserAnimationsModule,
-        // AdminModule,
         // Imports do Angular Material
         MatCardModule,
         MatToolbarModule,

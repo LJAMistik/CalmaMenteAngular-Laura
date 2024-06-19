@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdminRoutingModule } from './admin-routing.module';
-import { AdminComponent } from './admin.component';
-import { DashboardAdminComponent } from '../../components/dashboard/dashboard-admin/dashboard-admin.component';
-import { SidenavDashboardAdminComponent } from '../../components/dashboard/sidenav-dashboard-admin/sidenav-dashboard-admin.component';
-import { HomeDashboardAdminComponent } from '../../components/dashboard/home-dashboard-admin/home-dashboard-admin.component';
-import { HeaderDashboardAdminComponent } from '../../components/dashboard/header-dashboard-admin/header-dashboard-admin.component';
+import { ProfessionalRoutingModule } from './professional-routing.module';
+import { ProfessionalComponent } from './professional.component';
+import { DashboardComponent } from '../../components/dashboard/dashboard/dashboard.component';
+import { SidenavDashboardComponent } from '../../components/dashboard/sidenav-dashboard/sidenav-dashboard.component';
+import { HomeDashboardComponent } from '../../components/dashboard/home-dashboard/home-dashboard.component';
+import { HeaderDashboardComponent } from '../../components/dashboard/header-dashboard/header-dashboard.component';
 // Imports do Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,15 +18,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
-    AdminComponent,
-    DashboardAdminComponent,
-    SidenavDashboardAdminComponent,
-    HomeDashboardAdminComponent,
-    HeaderDashboardAdminComponent
+    ProfessionalComponent,
+    DashboardComponent,
+    SidenavDashboardComponent,
+    HomeDashboardComponent,
+    HeaderDashboardComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    ProfessionalRoutingModule,
     //Imports do Material
     MatCardModule,
     MatToolbarModule,
@@ -38,4 +38,4 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSidenavModule
   ]
 })
-export class AdminModule { }
+export class ProfessionalModule { }

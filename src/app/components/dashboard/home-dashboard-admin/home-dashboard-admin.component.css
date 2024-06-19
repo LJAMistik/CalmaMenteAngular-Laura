@@ -1,14 +1,14 @@
 /* // INSERIDO POR LAURA */
 
 .page {
-    color: #05C7F2;
+    color: #8A2BE2;
     padding: 0 1rem;
-    background: #05C7F2;
+    background: #A560FF;
   }
   
   .page__box {
     min-height: 120px;
-    background: #0E4C73;
+    background: #2E1B47;
     margin: 0 -1rem;
     font-size: 36px;
     padding: 15px;
@@ -20,8 +20,8 @@
     min-height: calc(100vh - 178px);
     border-radius: 10px;
     margin-top: -2rem;
-    background: #E9EEF2;
-    color: #05C7F2;
+    background: #EED4FF;
+    color: #8A2BE2;
     font-size: 2rem;
   }
     .page__content-data {
@@ -30,10 +30,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-    
-  .container-text p{
-    color: #0E4C73;
-    align-items: center;
-    text-align: center;
+  
+  .container-img {
+    display: flex;
   }
 
+  .container-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
