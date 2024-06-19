@@ -32,7 +32,8 @@ export class RegisterPageComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', Validators.required),
     confirmSenha: new FormControl('', Validators.required),
-    crp: new FormControl('')
+    crp: new FormControl('', Validators.required),
+    contact: new FormControl('', Validators.required)
   });
 
   constructor(private route: Router, private httpClient: HttpClient ) {}
@@ -50,13 +51,18 @@ export class RegisterPageComponent {
   
   public onSubmit() {
     const service = new UsuarioService(this.httpClient);
+    const userTypeControl = this.registerForm.controls.userType;
+    const userType = userTypeControl ? userTypeControl.value : null;
+    const crp = typeof userType === 'string' ? userType : '';
+
     service.register({
       cpf:this.registerForm.value.cpf as string,
       name:this.registerForm.value.nome as string,
       email:this.registerForm.value.email as string,
       password:this.registerForm.value.senha as string,
       birthday:this.registerForm.value.dataNascimento  as string,
-      crp: this.registerForm.controls.userType ? this.registerForm.controls.crp.value as string : undefined
+      crp: crp,
+      contact: this.registerForm.value.contact as string,
     }).subscribe(data => {
       console.log(data)
       this.route.navigate([`/perfil-${this.registerForm.value.userType ? "profissional" : "usuario"}`])
