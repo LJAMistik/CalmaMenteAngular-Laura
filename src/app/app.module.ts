@@ -38,7 +38,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { EventoComponent } from './pages/evento/evento.component';
 import { ClinicaComponent } from './pages/clinica/clinica.component';
 import { TranstornoComponent } from './pages/transtorno/transtorno.component';
-// import { ArtigoComponent } from './pages/artigo/artigo.component';
+import { ArtigoAddComponent } from './pages/artigo-add/artigo-add.component';
 
 
 //Imports do Material
@@ -83,7 +83,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
         UserEditComponent, 
         ProfessionalEditComponent, 
         EventoComponent, ClinicaComponent, TranstornoComponent,
-        ArtigoComponent,
+        ArtigoAddComponent,
     ],
 
     imports: [

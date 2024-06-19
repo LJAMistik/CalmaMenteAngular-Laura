@@ -17,7 +17,7 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
 import { EventoComponent } from './pages/evento/evento.component';
 import { ClinicaComponent } from './pages/clinica/clinica.component';
 import { TranstornoComponent } from './pages/transtorno/transtorno.component';
-import { ArtigoComponent } from './pages/artigo/artigo.component';
+import { ArtigoAddComponent } from './pages/artigo-add/artigo-add.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -39,7 +39,7 @@ const routes: Routes = [
   {path: 'evento', component:EventoComponent},
   {path: 'clinica', component:ClinicaComponent},
   {path: 'transtorno', component:TranstornoComponent},
-  {path: 'artigo', component:ArtigoComponent},
+  {path: 'artigo', component:ArtigoAddComponent},
 
 ];
 

@@ -1,4 +1,4 @@
-<!-- <app-header
+<app-header
     [color]="headerColors.depressao"
     titulo="Artigo"
     [h1HeaderColor]="h1HeaderColors.depressao"
@@ -8,8 +8,8 @@
 
 <main class="flex_center">
     <app-card-img 
-        [color]="ImgBorderColors.register"
-        img="assets\img\artigo__img.jpeg">
+        [color]="ImgBorderColors.login"
+        img="\assets\img\artigo__img.jpg">
     </app-card-img>
 
     <div class="flex_center flex_column gap-32">
@@ -34,10 +34,9 @@
                 formControlName="references" 
                 placeholder= "Referencia do Artigo"
                 >
-                
-            <button type="submit" [color]="BtnColors.login" text="Salvar"></button>
+                <app-btn-pages [color]="BtnColors.login" text="Salvar" type="submit"/>
         </form>
     </div>
 </main>
 
-<app-footer [color]="footerColors.depressao"></app-footer> -->
+<app-footer [color]="footerColors.depressao"></app-footer>

@@ -10,10 +10,10 @@ import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/com
 
 @Component({
   selector: 'app-artigo',
-  templateUrl: './artigo.component.html',
-  styleUrl: './artigo.component.css'
+  templateUrl: './artigo-add.component.html',
+  styleUrl: './artigo-add.component.css'
 })
-export class ArtigoComponent {
+export class ArtigoAddComponent {
   public headerColors = headerColors;
   public btnColors = btnColors;
   public textColors = textColors;
@@ -39,7 +39,7 @@ export class ArtigoComponent {
   onSubmit(): void {
     if (this.artigoForm.valid) {
       const formData = this.artigoForm.value;
-      console.log(formData);  // Aqui você pode implementar a lógica para enviar os dados para o backend, por exemplo
+      console.log(formData);
     } else {
       alert('Formulário inválido. Por favor, corrija os erros e tente novamente.');
     }
