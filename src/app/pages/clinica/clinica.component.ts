@@ -7,23 +7,23 @@ import { footerColors } from 'src/app/components/footer/footer.component';
 import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/components/header/header.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-interface Clinica {
-  nome: string;
-  email: string;
-  data_cadastro: string;
-  telefone: string;
-  classificacao: number;
-  especialidades: string[];
-  endereco: {
-    logradouro: string;
-    complemento: string;
-    bairro: string;
-    cidade: string;
-    uf: string;
-    cep: string;
-    coordinates: number[];
-  };
-}
+// interface Clinica {
+//   nome: string;
+//   email: string;
+//   data_cadastro: string;
+//   telefone: string;
+//   classificacao: number;
+//   especialidades: string[];
+//   endereco: {
+//     logradouro: string;
+//     complemento: string;
+//     bairro: string;
+//     cidade: string;
+//     uf: string;
+//     cep: string;
+//     coordinates: number[];
+//   };
+// }
 
 @Component({
   selector: 'app-clinica',
@@ -47,25 +47,26 @@ export class ClinicaComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     phone: new FormControl('', Validators.required),
     rating: new FormControl('', Validators.required),
-    address: {
+    address: new FormGroup ({
       zipCode: new FormControl('', Validators.required),
       street: new FormControl('', Validators.required),
-      neighborhood: string,
-      number: ,
-      city: string,
-      state: string,
-      complement: string,
-    }
+      neighborhood: new FormControl('', Validators.required),
+      number: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
+      complement: new FormControl('', Validators.required),
+    })
   })
 
-  // buscarClinica() {
-  //   const token = localStorage.getItem('token');
-  //   if (!token) {
-  //     console.error('Token não encontrado');
-  //     alert('Token não encontrado. Faça login novamente.');
-  //     return;
-  //   }
+  buscarClinica() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('Token não encontrado');
+      alert('Token não encontrado. Faça login novamente.');
+      return;
+    }
 
+  }
   //   const termoBusca = (document.getElementById('buscar-clinica') as HTMLInputElement).value;
 
   //   this.http.get<Clinica[]>(`/api/clinicas/nome/${termoBusca}`, {
@@ -140,6 +141,5 @@ export class ClinicaComponent {
   //     divDetalhes.innerHTML = '';
   //   }
   // }
-
-
+  // }
 }

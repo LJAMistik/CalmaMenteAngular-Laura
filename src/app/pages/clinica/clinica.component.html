@@ -18,17 +18,18 @@
                 <span class="border-left"></span>
                 
                 <legend class="rotulo">Informações:</legend>
-                <label for="nome" class="label-formulario">Nome:</label><br>
-                <input type="text" class="controle-formulario" id="nome" name="nome" value="Clinica de Teste" required><br><br>
+                <label for="name" class="label-formulario">Nome:</label><br>
+                <input type="text" formControlName="name" placeholder="name">
+                <!-- <input type="text" class="controle-formulario" id="nome" name="nome" value="Clinica de Teste" required><br><br> -->
                 
                 <label for="email" class="label-formulario">Email:</label><br>
-                <input type="email" class="controle-formulario" id="email" name="email" value="contato@clinicadeteste.com" required><br><br>
+                <input type="email" formControlName="email" placeholder="email">
     
-                <label for="telefone" class="label-formulario">Telefone:</label><br>
-                <input type="tel" class="controle-formulario" id="telefone" name="telefone" value="(15) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" title="Por favor, insira um número de contato válido (formato: (XX) XXXXX-XXXX)" required maxlength="15"><br><br>
+                <label for="phone" class="label-formulario">Telefone:</label><br>
+                <input type="tel" class="controle-formulario" id="phone" name="phone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" title="Por favor, insira um número de contato válido (formato: (XX) XXXXX-XXXX)" required maxlength="15"><br><br>
                 
-                <label for="classificacao" class="label-formulario">Classificação:</label><br>
-                <input type="number" class="controle-formulario" id="classificacao" name="classificacao" value="4.8" min="0" max="5" step="0.1" required><br><br>
+                <label for="rating" class="label-formulario">Classificação:</label><br>
+                <input type="number" class="controle-formulario" id="rating" name="rating" min="0" max="5" step="0.1" required><br><br>
     
                 <legend class="rotulo">Endereço:</legend>
     
