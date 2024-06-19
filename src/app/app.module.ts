@@ -36,6 +36,9 @@ import { ProfessionalEditComponent } from './pages/professional-edit/professiona
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { EventoComponent } from './pages/evento/evento.component';
+import { ClinicaComponent } from './pages/clinica/clinica.component';
+import { TranstornoComponent } from './pages/transtorno/transtorno.component';
+import { ArtigoComponent } from './pages/artigo/artigo.component';
 
 
 //Imports do Material
@@ -47,9 +50,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ClinicaComponent } from './pages/clinica/clinica.component';
-import { TranstornoComponent } from './pages/transtorno/transtorno.component';
-
 
 @NgModule({ 
 
@@ -82,7 +82,8 @@ import { TranstornoComponent } from './pages/transtorno/transtorno.component';
         // INSERIDO POR LAURA
         UserEditComponent, 
         ProfessionalEditComponent, 
-        EventoComponent, ClinicaComponent, TranstornoComponent
+        EventoComponent, ClinicaComponent, TranstornoComponent,
+        ArtigoComponent,
     ],
 
     imports: [

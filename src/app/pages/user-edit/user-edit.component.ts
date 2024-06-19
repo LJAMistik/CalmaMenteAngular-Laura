@@ -1,23 +1,20 @@
- // INSERIDO POR LAURA
- import { Component, OnInit } from '@angular/core';
- import { UsuarioService } from '../../services/usuario.service';
- import { BtnColors } from 'src/app/components/btn-pages/btn-pages.component';
- import { ImgBorderColors } from 'src/app/components/card-img/card-img.component';
- import { h2Colors } from 'src/app/components/card-info/card-info.component';
- import { footerColors } from 'src/app/components/footer/footer.component';
- import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/components/header/header.component';
- import { FormGroup, FormControl, Validators } from '@angular/forms';
- import { Router } from '@angular/router';
- import { AuthService } from 'src/app/services/auth.service'; 
- import { ModalFeedbackComponent } from 'src/app/components/modal-feedback/modal-feedback.component';
+import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario.service';
+import { BtnColors } from 'src/app/components/btn-pages/btn-pages.component';
+import { ImgBorderColors } from 'src/app/components/card-img/card-img.component';
+import { h2Colors } from 'src/app/components/card-info/card-info.component';
+import { footerColors } from 'src/app/components/footer/footer.component';
+import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/components/header/header.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
- 
- @Component({
-   selector: 'app-edit-profile',
-   templateUrl: './user-edit.component.html',
-   styleUrls: ['./user-edit.component.css']
- })
- export class UserEditComponent implements OnInit {
+@Component({
+  selector: 'app-edit-profile',
+  templateUrl: './user-edit.component.html',
+  styleUrls: ['./user-edit.component.css']
+})
+export class UserEditComponent implements OnInit {
   BtnColors = BtnColors;
   btnColors = btnColors;
   ImgBorderColors = ImgBorderColors;
@@ -31,7 +28,6 @@
   showModal = false;
   modalMessage = '';
 
-
   constructor(
     private authService: AuthService,
     private usuarioService: UsuarioService,
@@ -42,10 +38,6 @@
       dataNascimento: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email])
     });
-  }
- 
-  get getForm(): FormGroup {
-    return this.userProfileForm;
   }
 
   ngOnInit(): void {
@@ -61,19 +53,19 @@
     });
   }
 
-   getUserProfile(): void {
-     this.usuarioService.getUserProfile().subscribe(
-       (data: any) => {
-         this.user = data;
-         this.patchForm();
-       },
-       (error: any) => {
-         console.error('Erro ao buscar perfil do usuário', error);
-       }
-     );
-   }
+  getUserProfile(): void {
+    this.usuarioService.getUserProfile().subscribe(
+      (data: any) => {
+        this.user = data;
+        this.patchForm();
+      },
+      (error: any) => {
+        console.error('Erro ao buscar perfil do usuário', error);
+      }
+    );
+  }
 
-   patchForm(): void {
+  patchForm(): void {
     this.userProfileForm.patchValue({
       nome: this.user.nome,
       dataNascimento: this.user.dataNascimento,
@@ -84,8 +76,8 @@
   public editEnable() {
     this.readonly = !this.readonly;
   }
- 
-   onSubmit(): void {
+
+  onSubmit(): void {
     if (this.userProfileForm.valid) {
       const formData = this.userProfileForm.value;
       this.usuarioService.updateUserProfile(formData).subscribe(
@@ -102,5 +94,13 @@
     } else {
       alert('Formulário inválido. Por favor, corrija os erros e tente novamente.')
     }
+  }
+
+  salvarDados() {
+    // Aqui você pode adicionar a lógica para salvar os dados necessários antes de redirecionar para o login
+    console.log('Salvando dados antes de redirecionar para o login...');
+
+    // Exemplo fictício de redirecionamento para a tela de login
+    this.router.navigate(['/login']);
   }
 }

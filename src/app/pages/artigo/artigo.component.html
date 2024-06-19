@@ -1,20 +1,43 @@
-<!-- // INSERIDO POR LAURA
 <app-header
-    [color]="headerColors.home"
+    [color]="headerColors.depressao"
     titulo="Artigo"
-    [h1HeaderColor]="h1HeaderColors.home"
-    [textColor]="textColors.home"
-    [textColor]="textColors.home"
-    [textColor]="textColors.home"
-    [btnColor]="btnColors.home"
-/>
-<main class="flex_center">
-    <app-card-img [color]="ImgBorderColors.login" img="assets/img/obras.jpeg"/>        
-    <div class="flex_center flex_column gap-32">
+    [h1HeaderColor]="h1HeaderColors.depressao"
+    [textColor]="textColors.depressao"
+    [btnColor]="btnColors.depressao">
+</app-header>
 
+<main class="flex_center">
+    <app-card-img 
+        [color]="ImgBorderColors.register"
+        img="assets\img\artigo__img.jpeg">
+    </app-card-img>
+
+    <div class="flex_center flex_column gap-32">
+        <form [formGroup]="artigoForm" (ngSubmit)="onSubmit()">
+            <input 
+                type="text" 
+                formControlName="title" 
+                placeholder="Título do Artigo"
+                required>
+            <input 
+                type="text" 
+                formControlName="description" 
+                placeholder="Descrição"
+                required>
+            <input 
+                type="text" 
+                formControlName="article" 
+                placeholder="Conteúdo do Artigo"
+                required>
+            <input 
+                type="text" 
+                formControlName="references" 
+                placeholder= "Referencia do Artigo"
+                >
+                
+            <button type="submit" [color]="BtnColors.login" text="Salvar"></button>
+        </form>
     </div>
 </main>
 
-<app-footer [color]="footerColors.home" />
-
- -->
+<app-footer [color]="footerColors.depressao"></app-footer>

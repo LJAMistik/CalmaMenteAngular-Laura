@@ -1,31 +1,27 @@
-<!-- INSERIDO POR LAURA -->
-
 <app-header
   [color]="headerColors.home"
   titulo="Editar Perfil"
   [h1HeaderColor]="h1HeaderColors.home"
   [textColor]="textColors.home"
-  [textColor]="textColors.home"
-  [textColor]="textColors.home"
   [btnColor]="btnColors.home"
-/>
+></app-header>
 
 <main class="flex_center">
   <div class="flex_center flex_column">
     <app-card-img
         [color]="ImgBorderColors.login"
         img="\assets\img\perfil-de-usuario.png"
-    />
+    ></app-card-img>
   </div>
 
   <div class="user-edit-container">
-    <form [formGroup]="getForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
       <div class="flex_center flex_column gap-32">
         <input type="text" id="username" formControlName="nome" placeholder="Nome" required>
         <input type="text" formControlName="dataNascimento" placeholder="01/01/1999" required>
         <input type="email" id="email" formControlName="email" placeholder="email@email.com.br">
       </div>
-      <app-btn-pages [color]="BtnColors.login" text="Salvar" type="submit"/>
+      <app-btn-pages [color]="BtnColors.login" text="Salvar" type="submit" (click)="salvarDados()"></app-btn-pages>
     </form>
     <app-modal-feedback></app-modal-feedback>
   </div>

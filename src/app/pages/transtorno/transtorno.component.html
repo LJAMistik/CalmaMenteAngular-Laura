@@ -1,18 +1,41 @@
-<!-- // INSERIDO POR LAURA -->
 <app-header
-    [color]="headerColors.home"
-    titulo="Evento"
-    [h1HeaderColor]="h1HeaderColors.home"
-    [textColor]="textColors.home"
-    [textColor]="textColors.home"
-    [textColor]="textColors.home"
-    [btnColor]="btnColors.home"
-/>
-<main class="flex_center">
-    <app-card-img [color]="ImgBorderColors.login" img="assets/img/obras.jpeg"/>        
-    <div class="flex_center flex_column gap-32">
+    [color]="headerColors.depressao"
+    titulo="Cadastrar Transtorno"
+    [h1HeaderColor]="h1HeaderColors.depressao"
+    [textColor]="textColors.depressao"
+    [btnColor]="btnColors.depressao">
+</app-header>
 
+<main class="flex_center">
+    <app-card-img 
+        [color]="ImgBorderColors.login"
+        img="\assets\img\trantorno__img.jpg">
+    </app-card-img>
+
+    <div class="flex_center flex_column gap-32">
+        <form [formGroup]="transtornoForm" (ngSubmit)="onSubmit()">
+            <input 
+                type="text" 
+                formControlName="nome" 
+                placeholder="Seu Nome"
+                required>
+            <input 
+                type="text" 
+                formControlName="description" 
+                placeholder="Descrição"
+                required>
+            <input 
+                type="text" 
+                formControlName="color" 
+                placeholder="#000000">
+            <input 
+                type="text" 
+                formControlName="icon"
+                placeholder="Escolha o ícone">
+            
+                <app-btn-pages [color]="BtnColors.login" text="Salvar"></app-btn-pages>
+        </form>
     </div>
 </main>
 
-<app-footer [color]="footerColors.home" />
+<app-footer [color]="footerColors.depressao"></app-footer>

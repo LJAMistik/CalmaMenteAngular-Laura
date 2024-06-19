@@ -57,7 +57,7 @@
   }
   
   .list-item-icon {
-    width: 32px; /* Ajuste conforme o tamanho da sua imagem */
-    height: 32px; /* Ajuste conforme o tamanho da sua imagem */
-    margin-right: 8px; /* Espaçamento entre a imagem e o texto */
+    width: 32px; 
+    height: 32px; 
+    margin-right: 8px; 
   }
