@@ -38,7 +38,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { EventoComponent } from './pages/evento/evento.component';
 import { ClinicaComponent } from './pages/clinica/clinica.component';
 import { TranstornoComponent } from './pages/transtorno/transtorno.component';
-import { ArtigoComponent } from './pages/artigo/artigo.component';
+// import { ArtigoComponent } from './pages/artigo/artigo.component';
 
 
 //Imports do Material
