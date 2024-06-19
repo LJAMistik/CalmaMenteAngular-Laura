@@ -5,6 +5,7 @@ import { ImgBorderColors } from 'src/app/components/card-img/card-img.component'
 import { h2Colors } from 'src/app/components/card-info/card-info.component';
 import { footerColors } from 'src/app/components/footer/footer.component';
 import { btnColors, h1HeaderColors, headerColors, textColors } from 'src/app/components/header/header.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 interface Clinica {
   nome: string;
@@ -41,86 +42,104 @@ export class ClinicaComponent {
 
   constructor(private http: HttpClient) {}
 
-  buscarClinica() {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      console.error('Token não encontrado');
-      alert('Token não encontrado. Faça login novamente.');
-      return;
+  public registerClinicForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', Validators.required),
+    rating: new FormControl('', Validators.required),
+    address: {
+      zipCode: new FormControl('', Validators.required),
+      street: new FormControl('', Validators.required),
+      neighborhood: string,
+      number: ,
+      city: string,
+      state: string,
+      complement: string,
     }
+  })
 
-    const termoBusca = (document.getElementById('buscar-clinica') as HTMLInputElement).value;
+  // buscarClinica() {
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     console.error('Token não encontrado');
+  //     alert('Token não encontrado. Faça login novamente.');
+  //     return;
+  //   }
 
-    this.http.get<Clinica[]>(`/api/clinicas/nome/${termoBusca}`, {
-      headers: {
-        'access-token': token
-      }
-    })
-    .subscribe(
-      data => this.exibirResultadosClinicas(data),
-      error => this.handleError(error)
-    );
-  }
+  //   const termoBusca = (document.getElementById('buscar-clinica') as HTMLInputElement).value;
 
-  private handleError(error: any) {
-    console.error('Erro ao buscar clínicas:', error);
-    const resultadoClinica = document.getElementById('resultado-clinica');
-    if (resultadoClinica) {
-      resultadoClinica.innerHTML = '<p>Ocorreu um erro ao buscar as clínicas. Tente novamente mais tarde.</p>';
-    }
-  }
+  //   this.http.get<Clinica[]>(`/api/clinicas/nome/${termoBusca}`, {
+  //     headers: {
+  //       'access-token': token
+  //     }
+  //   })
+  //   .subscribe(
+  //     data => this.exibirResultadosClinicas(data),
+  //     error => this.handleError(error)
+  //   );
+  // }
 
-  exibirResultadosClinicas(resultados: Clinica[]) {
-    const divResultado = document.getElementById('resultado-clinica');
-    if (!divResultado) return;
+  // private handleError(error: any) {
+  //   console.error('Erro ao buscar clínicas:', error);
+  //   const resultadoClinica = document.getElementById('resultado-clinica');
+  //   if (resultadoClinica) {
+  //     resultadoClinica.innerHTML = '<p>Ocorreu um erro ao buscar as clínicas. Tente novamente mais tarde.</p>';
+  //   }
+  // }
 
-    divResultado.innerHTML = ''; // Limpa quaisquer resultados anteriores
+  // exibirResultadosClinicas(resultados: Clinica[]) {
+  //   const divResultado = document.getElementById('resultado-clinica');
+  //   if (!divResultado) return;
 
-    if (!Array.isArray(resultados) || resultados.length === 0) {
-      divResultado.innerHTML = '<p>Nenhuma clínica encontrada.</p>';
-      return;
-    }
+  //   divResultado.innerHTML = ''; // Limpa quaisquer resultados anteriores
 
-    const listaClinicas = document.createElement('ul');
-    resultados.forEach(clinica => {
-      const itemClinica = document.createElement('li');
-      itemClinica.textContent = `${clinica.nome} - ${clinica.endereco.cidade}, ${clinica.endereco.uf}`;
-      itemClinica.addEventListener('click', () => {
-        this.limparDetalhesClinica();
-        this.exibirDetalhesClinica(clinica);
-      });
-      listaClinicas.appendChild(itemClinica);
-    });
-    divResultado.appendChild(listaClinicas);
-  }
+  //   if (!Array.isArray(resultados) || resultados.length === 0) {
+  //     divResultado.innerHTML = '<p>Nenhuma clínica encontrada.</p>';
+  //     return;
+  //   }
 
-  exibirDetalhesClinica(clinica: Clinica) {
-    const divDetalhes = document.getElementById('detalhes-clinica');
-    if (!divDetalhes) return;
+  //   const listaClinicas = document.createElement('ul');
+  //   resultados.forEach(clinica => {
+  //     const itemClinica = document.createElement('li');
+  //     itemClinica.textContent = `${clinica.nome} - ${clinica.endereco.cidade}, ${clinica.endereco.uf}`;
+  //     itemClinica.addEventListener('click', () => {
+  //       this.limparDetalhesClinica();
+  //       this.exibirDetalhesClinica(clinica);
+  //     });
+  //     listaClinicas.appendChild(itemClinica);
+  //   });
+  //   divResultado.appendChild(listaClinicas);
+  // }
 
-    divDetalhes.innerHTML = `
-      <h2>Detalhes da Clínica</h2>
-      <p><strong>Nome:</strong> ${clinica.nome}</p>
-      <p><strong>Email:</strong> ${clinica.email}</p>
-      <p><strong>Data de Cadastro:</strong> ${new Date(clinica.data_cadastro).toLocaleDateString()}</p>
-      <p><strong>Telefone:</strong> ${clinica.telefone}</p>
-      <p><strong>Classificação:</strong> ${clinica.classificacao}</p>
-      <p><strong>Especialidades:</strong> ${clinica.especialidades.join(', ')}</p>
-      <h5>Endereço</h5>
-      <p><strong>Logradouro:</strong> ${clinica.endereco.logradouro}</p>
-      <p><strong>Complemento:</strong> ${clinica.endereco.complemento}</p>
-      <p><strong>Bairro:</strong> ${clinica.endereco.bairro}</p>
-      <p><strong>Cidade:</strong> ${clinica.endereco.cidade}</p>
-      <p><strong>UF:</strong> ${clinica.endereco.uf}</p>
-      <p><strong>CEP:</strong> ${clinica.endereco.cep}</p>
-      <p><strong>Coordenadas:</strong> ${clinica.endereco.coordinates.join(', ')}</p>
-    `;
-  }
+  // exibirDetalhesClinica(clinica: Clinica) {
+  //   const divDetalhes = document.getElementById('detalhes-clinica');
+  //   if (!divDetalhes) return;
 
-  limparDetalhesClinica() {
-    const divDetalhes = document.getElementById('detalhes-clinica');
-    if (divDetalhes) {
-      divDetalhes.innerHTML = '';
-    }
-  }
+  //   divDetalhes.innerHTML = `
+  //     <h2>Detalhes da Clínica</h2>
+  //     <p><strong>Nome:</strong> ${clinica.nome}</p>
+  //     <p><strong>Email:</strong> ${clinica.email}</p>
+  //     <p><strong>Data de Cadastro:</strong> ${new Date(clinica.data_cadastro).toLocaleDateString()}</p>
+  //     <p><strong>Telefone:</strong> ${clinica.telefone}</p>
+  //     <p><strong>Classificação:</strong> ${clinica.classificacao}</p>
+  //     <p><strong>Especialidades:</strong> ${clinica.especialidades.join(', ')}</p>
+  //     <h5>Endereço</h5>
+  //     <p><strong>Logradouro:</strong> ${clinica.endereco.logradouro}</p>
+  //     <p><strong>Complemento:</strong> ${clinica.endereco.complemento}</p>
+  //     <p><strong>Bairro:</strong> ${clinica.endereco.bairro}</p>
+  //     <p><strong>Cidade:</strong> ${clinica.endereco.cidade}</p>
+  //     <p><strong>UF:</strong> ${clinica.endereco.uf}</p>
+  //     <p><strong>CEP:</strong> ${clinica.endereco.cep}</p>
+  //     <p><strong>Coordenadas:</strong> ${clinica.endereco.coordinates.join(', ')}</p>
+  //   `;
+  // }
+
+  // limparDetalhesClinica() {
+  //   const divDetalhes = document.getElementById('detalhes-clinica');
+  //   if (divDetalhes) {
+  //     divDetalhes.innerHTML = '';
+  //   }
+  // }
+
+
 }
