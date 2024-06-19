@@ -7,7 +7,7 @@ import { DisorderResponse } from '../types';
   providedIn: 'root'
 })
 export class TranstornoService {
-  private baseUrl: string = "http://localhost:9090/transtorno";
+  private baseUrl: string = "http://localhost:8080/api";
 
   constructor(private http: HttpClient) {}
 

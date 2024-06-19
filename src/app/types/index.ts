@@ -1,25 +1,57 @@
 type Information = {
-    id: number,
-    titulo:string,
-    descricao:string
+    tittle:string,
+    description:string
 }
 
-export type DisorderResponse = Information & {
-    artigos: {
-        id: number,
-        titulo:string,
-        descricao:string,
-        conteudo:string,
-        tema:string
-        }[]
+type ReferenceSchema = {
+    link: string,
+    description: boolean
 }
 
-export type UserType = {
-    id?:number,
-    nome:string,
-    dataNascimento:string,
-    cpf:string,
-    senha:string,
+type AdressSchema = {
+    zipCode: string,
+    description: boolean
+    street: string,
+    neighborhood: string,
+    city: string,
+    state: string,
+    number: number,
+    complement: string
+}
+
+type ProfessionalResponse = {
+    name: string,
+    crp: string,
+    cpf: string,
+    contact: string
+}
+
+export type UserType = ProfessionalResponse & {
+    name:string,
     email:string,
-    crp?:string
+    password:string,
+    birthday:string,
+    isAdmii:boolean,
+}
+
+export type ArticleType = ReferenceSchema & {
+    title:string,
+    description:string,
+    article:string,
+    references:string,
+    author:string
+}
+
+export type ClinicType = AdressSchema & {
+    name:string,
+    email:string,
+    phone:string,
+    rating:number
+}
+
+export type DisorderType = {
+    nome:string,
+    description:string,
+    color:string,
+    icon:string
 }

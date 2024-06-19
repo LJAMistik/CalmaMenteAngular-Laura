@@ -31,7 +31,7 @@ describe('ApiService', () => {
       expect(data).toEqual(testData);
     });
 
-    const req = httpTestingController.expectOne('http://localhost:9090/users');
+    const req = httpTestingController.expectOne('http://localhost:8080/api');
     expect(req.request.method).toEqual('GET');
 
     req.flush(testData);
@@ -44,7 +44,7 @@ describe('ApiService', () => {
       expect(data).toEqual(testData);
     });
 
-    const req = httpTestingController.expectOne('http://localhost:9090/users');
+    const req = httpTestingController.expectOne('http://localhost:8080/api');
     expect(req.request.method).toEqual('POST');
     expect(req.request.body).toEqual(testData);
 

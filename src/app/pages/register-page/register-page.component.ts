@@ -52,10 +52,10 @@ export class RegisterPageComponent {
     const service = new UsuarioService(this.httpClient);
     service.register({
       cpf:this.registerForm.value.cpf as string,
-      nome:this.registerForm.value.nome as string,
+      name:this.registerForm.value.nome as string,
       email:this.registerForm.value.email as string,
-      senha:this.registerForm.value.senha as string,
-      dataNascimento:this.registerForm.value.dataNascimento  as string,
+      password:this.registerForm.value.senha as string,
+      birthday:this.registerForm.value.dataNascimento  as string,
       crp: this.registerForm.controls.userType ? this.registerForm.controls.crp.value as string : undefined
     }).subscribe(data => {
       console.log(data)

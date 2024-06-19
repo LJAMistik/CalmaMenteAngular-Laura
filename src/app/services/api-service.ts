@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DisorderResponse } from '../types';
 
 export class ApiService {
-    private baseUrl: string = "http://localhost:9090";
+    private baseUrl: string = "http://localhost:8080/api";
 
     constructor(baseUrl: string, private http: HttpClient) {
         this.baseUrl += baseUrl;
