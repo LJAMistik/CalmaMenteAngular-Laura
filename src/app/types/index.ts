@@ -19,20 +19,20 @@ type AdressSchema = {
     complement: string
 }
 
-type ProfessionalResponse = {
-    name: string,
-    crp: string,
-    cpf: string,
-    contact: string
-}
+// type ProfessionalResponse = {
+//     name: string,
+//     crp: string,
+//     cpf: string,
+//     contact: string
+// }
 
-export type UserType = ProfessionalResponse & {
-    name:string,
-    email:string,
-    password:string,
-    birthday:string,
-    isAdmii:boolean,
-}
+// export type UserType = ProfessionalResponse & {
+//     name:string,
+//     email:string,
+//     password:string,
+//     birthday:string,
+//     isAdmii:boolean,
+// }
 
 export type ArticleType = ReferenceSchema & {
     title:string,
@@ -54,4 +54,26 @@ export type DisorderType = {
     description:string,
     color:string,
     icon:string
-}
+}  
+
+export interface UserType {
+    cpf: string;
+    name: string;
+    email: string;
+    password: string;
+    birthday: string;
+    crp: string;
+    contact: string;
+  }
+  
+  export interface DisorderResponse {
+    name: string;
+    description: string;
+    color: string;
+    icon: string;
+  }
+
+  export interface Article {
+    title: string;
+  }
+  
